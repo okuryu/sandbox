@@ -1,4 +1,7 @@
 on: push
+push:
+  branches:
+  - master
 name: Deploy on Now
 jobs:
   deploy:
@@ -17,10 +20,6 @@ jobs:
         ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
       with:
         args: alias `cat $HOME/deploy.txt` ${{ github.sha }}
-    - name: master-branch-filter
-      uses: actions/bin/filter@master
-      with:
-        args: branch master
     - name: release
       uses: actions/zeit-now@master
       env:
