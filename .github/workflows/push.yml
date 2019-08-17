@@ -14,13 +14,7 @@ jobs:
       env:
         ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
       with:
-        args: --public --no-clipboard deploy . > $HOME/${{ github.action }}.txt
-    - name: alias
-      uses: actions/zeit-now@master
-      env:
-        ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
-      with:
-        args: alias `cat $HOME/deploy.txt` ${{ github.sha }}
+        args: --public --no-clipboard deploy .
     - name: release
       uses: actions/zeit-now@master
       env:
