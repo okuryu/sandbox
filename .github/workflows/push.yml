@@ -14,10 +14,10 @@ jobs:
       env:
         ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
       with:
-        args: --public --no-clipboard deploy .
+        args: --name sandbox --public --no-clipboard deploy .
     - name: release
       uses: actions/zeit-now@master
       env:
         ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
       with:
-        args: alias --local-config=./now.json
+        args: --name sandbox alias --local-config=./now.json
