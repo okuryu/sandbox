@@ -12,17 +12,17 @@ jobs:
         - 12
     steps:
     - uses: actions/checkout@v1
-    - name: Setup Node.js ${{ matrix.node }}
-      uses: actions/setup-node@v1
+    - uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node }}
-#  publich:
-#    runs-on: ubuntu-latest
-#    steps:
-#    - uses: actions/checkout@v1
-#      - uses: actions/setup-node@v1
-#        with:
-#          node-version: 10
+  publich:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 10
 #          registry-url: https://npm.pkg.github.com/
 #          scope: '@okuryu'
 #      - run: npm publish
