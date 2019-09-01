@@ -1,0 +1,26 @@
+{
+  "name": "@okuryu/sandbox",
+  "version": "0.0.1",
+  "description": "okuryu/sandbox",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo ok"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okuryu/sandbox.git"
+  },
+  "author": "Ryuichi Okumura <okuryu@okuryu.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/okuryu/sandbox/issues"
+  },
+  "homepage": "https://github.com/okuryu/sandbox#readme",
+  "dependencies": {
+    "next": "^9.0.5",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
