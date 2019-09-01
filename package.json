@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/okuryu/sandbox.git"
+    "url": "git://github.com/okuryu/sandbox.git"
   },
   "author": "Ryuichi Okumura <okuryu@okuryu.com>",
   "license": "MIT",
