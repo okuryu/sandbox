@@ -1,8 +1,10 @@
 on:
-  - push:
+  push:
     branches:
       - master
-  - pull_request
+  pull_request:
+    branches:
+      - '*'
 jobs:
   main:
     runs-on: ubuntu-latest
