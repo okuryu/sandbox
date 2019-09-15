@@ -1,31 +1,9 @@
-name: Deploy package to GitHub package registry
 on:
-  pull_request:
-    branches:
-      - master
-  push:
-    branches:
-      - master
+  - push
+  - pull_request
 jobs:
-  build:
+  main:
     runs-on: ubuntu-latest
     steps:
-      - name: "Setup actions"
-        uses: actions/checkout@v1
-      - name: "npm/registry setup"
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://npm.pkg.github.com/
-          scope: "@okuryu"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: "publish package"
-        uses: actions/bin/debug@master
-        run: |
-          npm run test 
-          npm run build
-          echo @okuryu:registry=https://npm.pkg.github.com/ >> .npmrc
-          npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
