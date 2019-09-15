@@ -17,3 +17,10 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: node -v
       - run: npm install
+  publish:
+    needs: main
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+      - run: node -v
