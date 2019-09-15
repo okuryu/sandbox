@@ -25,6 +25,7 @@ jobs:
     needs: main
     runs-on: ubuntu-latest
     steps:
+      - if: github.event_name != 'pull_request'
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
       - run: node -v
