@@ -33,6 +33,8 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: export VERSION=`npm view . version`
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: env
       - name: publish package
         if: github.event_name != 'pull_request'
