@@ -1,6 +1,6 @@
 {
   "name": "@okuryu/sandbox",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "okuryu/sandbox",
   "scripts": {
     "dev": "next",
@@ -22,8 +22,5 @@
     "next": "^9.0.5",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@okuryu"
   }
 }
