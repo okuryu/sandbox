@@ -1,0 +1,32 @@
+name: Release
+on:
+  tags:
+    - 'v*'
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10
+          registry-url: https://npm.pkg.github.com
+          scope: '@okuryu'
+      - name: Publish
+        run: |
+          LATEST_VERSION=`npm view . version`
+          LOCAL_VERSION=`cat package.json | jq -r .version`
+          if [ "$LATEST_VERSION" == "$LOCAL_VERSION" ]
+          then
+            exit 1
+          fi
+          npm ci
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/create-release@v1
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
