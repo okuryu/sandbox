@@ -6,7 +6,7 @@ on:
   pull_request:
 jobs:
   main:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node: [10, 12]
