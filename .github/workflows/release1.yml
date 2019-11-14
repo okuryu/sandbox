@@ -1,0 +1,10 @@
+name: Release1
+on:
+  release:
+    type: [created]
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo ok
