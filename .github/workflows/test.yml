@@ -15,9 +15,5 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-      - name: npm ci
-        run: |
+      - run: |
           npm ci
-      - run: echo $TEST
-        env:
-          TEST: 2019
