@@ -15,9 +15,12 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-      - run: |
+      - name: Install
+        run: |
           if [ -f package-lock.json ]; then
+            echo 'npm ci..'
             npm ci
           else
+            echo 'npm install..'
             npm install
           fi
