@@ -5,15 +5,15 @@ on:
       - main
   pull_request:
 jobs:
-  build:
-    name: Lint
+  lint:
+    name: lint
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Lint
+      - name: lint
       - uses: github/super-linter@v4
         env:
           VALIDATE_ALL_CODEBASE: false
