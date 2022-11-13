@@ -6,14 +6,14 @@ on:
   pull_request:
 jobs:
   lint:
-    name: lint
+    name: Lint
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: lint
+      - name: Lint
         uses: github/super-linter@v4
         env:
           DEFAULT_BRANCH: main
