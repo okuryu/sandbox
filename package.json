@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/okuryu/sandbox#readme",
   "dependencies": {
-    "next": "13.0.3",
+    "next": "13.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }
